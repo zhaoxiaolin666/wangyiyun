@@ -1,0 +1,138 @@
+/* pages/playmusic/playmusic.wxss */
+.boxplay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  position: relative;
+}
+
+.border {
+  width: 100%;
+  border-bottom: 1rpx solid cornflowerblue;
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-position: cover;
+  -webkit-filter: blur(100rpx);
+  filter: blur(100rpx);
+  z-index: -1;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: gray;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.picurl {
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 50%;
+  margin: 97rpx 0;
+}
+
+.picurl111 {
+  animation: picurl 20s linear infinite;
+}
+
+.picurl222 {
+  animation: picurl 20s linear infinite;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  /* Safari 和 Chrome */
+}
+
+@keyframes picurl {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.order {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.order111 {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.order222 {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.color {
+  color: red;
+}
+#hover {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+.cover{
+  color: skyblue;
+  animation: test;
+  animation-timing-function: initial;
+  /* 速度 */
+  animation-delay: 0s;
+  /* 延时 */
+  animation-iteration-count: 1;
+  /* 动画迭代计数 */
+  animation-direction: normal;
+}
+@keyframes test {
+  0% {
+      width: 0%;
+  }
+  25% {
+      width: 25%;
+  }
+  50% {
+      width: 50%;
+  }
+  75% {
+      width: 75%;
+  }
+  100% {
+      width: 100%;
+  }
+}

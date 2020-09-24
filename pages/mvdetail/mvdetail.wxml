@@ -1,0 +1,4 @@
+<!--pages/mvdetail/mvdetail.wxml-->
+<view class="section tc">
+	<video id="myVideo" src="{{mvurl}}" enable-danmu danmu-btn controls style="width:100%;"></video>
+</view>

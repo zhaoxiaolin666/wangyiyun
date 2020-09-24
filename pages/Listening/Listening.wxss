@@ -1,0 +1,49 @@
+/* pages/Listening/Listening.wxss */
+.scroll-view_H {
+  white-space: nowrap;
+  width: 100%;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+}
+.scroll-view-item_H111 {
+  display: inline-block;
+  margin:10rpx;
+}
+.typeListname{
+  padding:20rpx 10rpx 0 10rpx;
+}
+.singers {
+  width: 50%;
+  margin: 0 auto;
+  padding-top:20rpx;
+}
+
+.color {
+  background-color: #CB1C36;
+  color: #fff;
+}
+
+.border {
+  border-bottom: 6rpx solid red;
+}
+.initials{
+  padding:5rpx 10rpx;
+}
+.artists{
+  display: flex;
+  border-bottom: 1rpx solid #f6f6f6;
+  padding:20rpx 50rpx;
+}
+.arts{
+  width:150rpx;
+  height:150rpx;
+  border-radius: 50%;
+}
+.artname{
+  height:150rpx;
+  line-height: 150rpx;
+  margin:0 20rpx;
+}

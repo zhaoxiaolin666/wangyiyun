@@ -1,0 +1,13 @@
+/* pages/searchdetail/searchdetail.wxss */
+.scroll-view-item_H{
+  display: inline-block;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.item{
+  padding:20rpx;
+}
+.border{
+  border-bottom: 5rpx solid red;
+}

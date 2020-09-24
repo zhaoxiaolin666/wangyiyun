@@ -1,0 +1,31 @@
+<!--pages/Listening/Listening.wxml-->
+<view>
+<!-- 歌手类型和区域 -->
+	<view>
+		<scroll-view scroll-x="true" class="scroll-view_H">
+			<view wx:for="{{typeList}}" wx:key="index" class="scroll-view-item_H">
+				<view bindtap="singer" data-index="{{index}}" class="typeListname">{{item.name}}</view>
+				<view class="singers {{index===singer ? 'border' : ''}}"></view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 歌手首字母 -->
+	<view wx:if="{{singer!==0}}">
+		<scroll-view scroll-x="true" class="scroll-view_H">
+			<view wx:for="{{initials}}" wx:key="index" class="scroll-view-item_H111">
+				<view class="initials {{index===hot ? 'color' : ''}}" bindtap="hot" data-index="{{index}}">{{item.name}}</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 歌手展示 -->
+	<view>
+		<view wx:for="{{artists}}" wx:key="index">
+			<view class="artists">
+				<view>
+					<image src="{{item.img1v1Url}}" class="arts"></image>
+				</view>
+				<view class="artname">{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+</view>

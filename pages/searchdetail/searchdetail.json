@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "search1":"../../components/search1/search1",
+    "search2":"../../components/search2/search2",
+    "search3":"../../components/search3/search3",
+    "search4":"../../components/search4/search4",
+    "search5":"../../components/search5/search5",
+    "search6":"../../components/search6/search6",
+    "search7":"../../components/search7/search7",
+    "search8":"../../components/search8/search8"
+  }
+}

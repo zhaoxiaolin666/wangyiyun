@@ -1,0 +1,25 @@
+<!--pages/search/search.wxml-->
+<view>
+	<view class="search">
+		<input class="weuiinput" auto-focus placeholder="{{showKeyword}}" bindconfirm="bindconfirm" bindinput="bindinput"/>
+	</view>
+  <view wx:if="{{allMatch.length&&value!==''}}">
+  <view wx:for="{{allMatch}}" wx:key="index" style="padding:10rpx 40rpx;" >
+  <rich-text nodes="{{item.keyword}}" bindtap="nodes" data-name="{{item.keyword}}"></rich-text>
+  </view>
+  </view>
+	<view wx:else>
+		<view class="hot">热搜列表</view>
+		<view class="hotdetail">
+			<view wx:for="{{hotdetail}}" wx:key="index" class="wxhot">
+				<view style="display:flex;font-size:45rpx;">
+					<view>{{item.searchWord}}</view>
+					<view>
+						<image src="{{item.iconUrl}}" style="width:80rpx;height:40rpx;"></image>
+					</view>
+				</view>
+				<view class="content">{{item.content}}</view>
+			</view>
+		</view>
+	</view>
+</view>

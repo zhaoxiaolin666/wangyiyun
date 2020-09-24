@@ -1,0 +1,10 @@
+/* pages/mine/mine.wxss */
+.border{
+  border-bottom: 5rpx solid red;
+}
+.ipt1{
+  background-color: #f0f0f0f0;
+  padding:15rpx 0;
+  font-size: 36rpx;
+  width:100%;
+}

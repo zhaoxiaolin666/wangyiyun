@@ -1,0 +1,36 @@
+/* pages/search/search.wxss */
+.search{
+  display: flex;
+  justify-content: center;
+}
+.weuiinput{
+  width: 90%;
+  background-color: #f0f0f0;
+  padding:15rpx 0;
+  margin:15rpx 0;
+  font-size: 36rpx;
+}
+.hot{
+  color:skyblue;
+  font-size: 36rpx;
+  padding-left:40rpx;
+}
+.hotdetail{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: 500;
+}
+.wxhot{
+  width:45%;
+  margin:15rpx 0;
+}
+.content{
+  font-size: 30rpx;
+  overflow: hidden;
+  /*自动隐藏文字*/
+  text-overflow: ellipsis;
+  /*文字隐藏后添加省略号*/
+  white-space: nowrap;
+  /*强制不换行*/
+}

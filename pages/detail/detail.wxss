@@ -1,0 +1,43 @@
+.topdetail {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 20rpx 20rpx 20rpx;
+}
+
+.name {
+  color:#ffffff;
+  font-size: 36rpx;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.description{
+  color:#f2f2f2;
+  font-weight: 200;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+}
+.image{
+  width:40rpx;
+  height:40rpx;
+}
+.font{
+  font-size: 28rpx;
+  color:#f2f2f2;
+}
+.songs111{
+  overflow: hidden;
+  /*自动隐藏文字*/
+  text-overflow: ellipsis;
+  /*文字隐藏后添加省略号*/
+  white-space: nowrap;
+  /*强制不换行*/
+}

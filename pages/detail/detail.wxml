@@ -1,0 +1,88 @@
+<view>
+	<view style="background-image: url({{playlist.coverImgUrl}});background-size: 3000%;">
+		<view class="topdetail">
+			<view>
+				<image src="{{playlist.coverImgUrl}}" style="width:250rpx;height:250rpx;border-radius:10rpx;"></image>
+			</view>
+			<!-- 右侧详情 -->
+			<view style="margin:0 20rpx;">
+				<view class="name">{{playlist.name}}</view>
+				<view style="display:flex;color:#f2f2f2;padding:25rpx 0;">
+					<view>
+						<image src="{{creator.avatarUrl}}" style="width:40rpx;height:40rpx;border-radius:50%;"></image>
+					</view>
+					<view style="padding:0 20rpx;font-size:30rpx;line-height:40rpx;">{{creator.nickname}}</view>
+				</view>
+				<view class="description">{{playlist.description}}</view>
+			</view>
+		</view>
+		<!-- 导航栏 -->
+		<view style="display:flex;justify-content:space-around;padding:20rpx 0;">
+			<view>
+				<view style="text-align:center;">
+					<image src="../../images/information.png" class="image"></image>
+				</view>
+				<view class="font">{{playlist.commentCount}}</view>
+			</view>
+			<view>
+				<view style="text-align:center;">
+					<image src="../../images/share.png" class="image"></image>
+				</view>
+				<view class="font">{{playlist.shareCount}}</view>
+			</view>
+			<view>
+				<view style="text-align:center;">
+					<image src="../../images/download.png" class="image"></image>
+				</view>
+				<view class="font">下载</view>
+			</view>
+			<view>
+				<view style="text-align:center;">
+					<image src="../../images/choice.png" class="image"></image>
+				</view>
+				<view class="font">多选</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view>
+			<!-- 歌曲详情头部 -->
+			<view style="display:flex;justify-content: space-between;padding:30rpx;">
+				<view style="display:flex;align-items:center;">
+					<view bindtap="palymusic111">
+						<image src="../../images/play.png" style="width:50rpx;height:50rpx;padding:0 10rpx;"></image>
+					</view>
+					<view bindtap="palymusic111">播放全部</view>
+					<view style="color:#999999;font-size:28rpx;">（共{{songs.length}}首）</view>
+				</view>
+				<view>
+					<view style="padding:10rpx 20rpx;border-radius:50rpx;background-color:#EB3941;color:#f9f9f9;font-size:28rpx;font-weight:300;">+收藏{{playlist.subscribedCount}}</view>
+				</view>
+			</view>
+			<!-- 歌曲详情内容 -->
+			<view wx:for="{{songs}}" wx:key="index" style="padding:10rpx 20rpx;display:flex;ustify-content: space-between;align-items:center;">
+				<view style="display:flex;align-items:center;width:75%;" bindtap="palymusic" data-index='{{index}}'>
+					<view style="color:#999999;padding:0 20rpx;">{{index+1}}</view>
+					<view style="padding:20rpx;margin-right:3 0rpx;width:80%;">
+						<view class="songs111">{{item.name}}<text wx:if="{{item.alia.length>0}}">({{item.alia}})</text></view>
+						<view class="songs111" style="color:#999999;font-size:24rpx;display:flex;">
+							<view wx:for="{{item.ar}}" wx:key="index1" wx:for-item="item1" wx:for-index="index1" style="display:flex;">
+								<view>{{item1.name}}</view>
+								<view wx:if="{{index1<item.ar.length-1}}">/</view>
+							</view>
+							<text>-{{item.al.name}}</text>
+						</view>
+					</view>
+				</view>
+				<view style="display:flex;align-items:center;">
+					<view style="width:40rpx;height:40rpx;padding:0 20rpx;">
+						<image src="../../images/play111.png" bindtap="gotomv" data-mvid="{{index}}" wx:if="{{item.mv!==0}}" style="width:40rpx;height:40rpx;"></image>
+					</view>
+					<view>
+						<image src="../../images/spot.png" style="width:50rpx;height:50rpx;padding:0 20rpx;"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

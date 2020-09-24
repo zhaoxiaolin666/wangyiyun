@@ -1,0 +1,38 @@
+<!--pages/searchdetail/searchdetail.wxml-->
+<view>
+	<scroll-view class="scroll-view_H" scroll-x="true">
+		<view wx:for="{{list}}" wx:key="index" class="scroll-view-item_H">
+			<view class="item {{index===idflag ? 'border' : ''}}" bindtap="tab" data-index="{{index}}">{{item.name}}</view>
+		</view>
+	</scroll-view>
+</view>
+<view wx:if="{{idflag===0}}">
+	<search1 value="{{value}}" type="1"></search1>
+</view>
+<view wx:if="{{idflag===1}}">
+	<search2 value="{{value}}" type="10"></search2>
+</view>
+<view wx:if="{{idflag===2}}">
+	<search3 value="{{value}}" type="100"></search3>
+</view>
+<view wx:if="{{idflag===3}}">
+	<search4 value="{{value}}" type="1000"></search4>
+</view>
+<view wx:if="{{idflag===4}}">
+	<search5 value="{{value}}" type="1002"></search5>
+</view>
+<view wx:if="{{idflag===5}}">
+	<search6 value="{{value}}" type="1004"></search6>
+</view>
+<view wx:if="{{idflag===6}}">
+	<search7 value="{{value}}" type="1006"></search7>
+</view>
+<view wx:if="{{idflag===7}}">
+	<search8 value="{{value}}" type="1009"></search8>
+</view>
+
+
+
+
+
+

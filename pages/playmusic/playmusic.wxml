@@ -1,0 +1,89 @@
+<!--pages/playmusic/playmusic.wxml-->
+<view class="boxplay">
+	<!-- 头部 -->
+	<view style="text-align:center;width:100%;">
+		<view style="font-size:40rpx;color:#fff;padding:10rpx 0;font-weight:500;text-align:center;">{{songs[index111].name}}</view>
+		<view style="font-size:30rpx;color:#f9f9f9;display:flex;justify-content:center;">
+			<view wx:for="{{songs[index111].ar}}" wx:key="index">
+				<view style="display:flex;justify-content:center;">
+					<view>{{item.name}}</view>
+					<view wx:if="{{index<songs[index111].ar.length-1}}">-</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 歌手写真 -->
+	<view style="text-align:center;width:100%;" wx:if="{{Jump===false}}">
+		<image src="{{songs[index111].al.picUrl}}" class="picurl {{paly===true ? 'picurl111' : 'picurl222'}}" bindtap="gotolyric"></image>
+	</view>
+	<!-- 歌词 -->
+	<view bindtap="gotoPhoto" wx:if="{{Jump===true}}" style="width:100%;padding:20rpx 0;height:55vh; overflow: auto;color:#fff;">
+		<scroll-view scroll-y="true" scroll-with-animation="true" scroll-top="{{scrollTop*28}}" style="height:100vh;" bindtouchstart="bindtouchstart" bindtouchend="bindtouchend" bindscroll="bindscroll">
+			<view style="height:400rpx;"></view>
+			<view wx:for="{{lyric}}" wx:key="index" style="display:flex;justify-content:center;text-align:center;padding:10rpx 0;  position: relative;">
+				<view style="position: relative;text-decoration:none;">{{item}}
+					<view id="hover" class="{{index===scrollTop ? 'cover' : ''}}" style="animation-duration:{{timedifference}}s;text-decoration: none;">
+					{{item}}</view>
+				</view>
+			</view>
+			<view style="height:400rpx;"></view>
+		</scroll-view>
+	</view>
+	<view class="border" wx:if="{{Jump===true&&show===true}}">
+		<view>{{nowtime}}</view>
+		<view bindtap="playnowtime">
+			<image src="../../images/play.png" style="height:40rpx;width:40rpx;"></image>
+		</view>
+	</view>
+	<!-- 滚动条 -->
+	<view style="display:flex;justify-content:center;align-items:center;color:#ffffff;width:100%;">
+		<view style="width:12%;">{{showTime}}</view>
+		<view style="width:70%;">
+			<slider block-size='15' value="{{audioTime}}" bindchange='sliderChange' bindchanging='draging' max="{{long}}" min='0' />
+		</view>
+		<view style="width:12%;">{{duration}}</view>
+	</view>
+	<!-- 播放方式 -->
+	<view class="order">
+		<!-- 顺序播放 -->
+		<view wx:if="{{flag===0}}">
+			<image src="../../images/Sequenceplay.png" class="order111" bindtap="playing1"></image>
+		</view>
+		<!-- 单曲播放 -->
+		<view wx:if="{{flag===1}}">
+			<image src="../../images/Singleplay.png" class="order111" bindtap="playing2"></image>
+		</view>
+		<!-- 随机播放 -->
+		<view wx:if="{{flag===2}}">
+			<image src="../../images/Randomplay.png" class="order111" bindtap="playing3"></image>
+		</view>
+		<!-- 上一曲 -->
+		<view>
+			<image src="../../images/Lastsong.png" class="order111" bindtap="Lastsong"></image>
+		</view>
+		<!-- 开始播放 -->
+		<view wx:if="{{paly===true}}">
+			<image src="../../images/start.png" class="order111" bindtap="playorder1"></image>
+		</view>
+		<!-- 暂停播放 -->
+		<view wx:if="{{paly===false}}">
+			<image src="../../images/end.png" class="order111" bindtap="playorder2"></image>
+		</view>
+		<!-- 下一曲 -->
+		<view>
+			<image src="../../images/Nextsong.png" class="order111" bindtap="Nextsong"></image>
+		</view>
+		<!-- 未收藏歌曲 -->
+		<view wx:if="{{Collection===false}}">
+			<image src="../../images/live.png" class="order222" bindtap="Collection1"></image>
+		</view>
+		<!-- 已收藏歌曲 -->
+		<view wx:else>
+			<image src="../../images/live-active.png" class="order222" bindtap="Collection2"></image>
+		</view>
+	</view>
+</view>
+<view>
+	<image src="{{songs[index111].al.picUrl}}" class="bg">"></image>
+</view>
+<view class="mask"></view>

@@ -1,0 +1,125 @@
+<!-- <view>{{msg}}</view>
+<view>{{$.msg}}</view>
+<view>
+<button bindtap='updata' >改变数据</button>
+</view> -->
+<view>
+	<!-- 顶部 -->
+	<view class="topindex">
+		<view style="font-size:48rpx;font-weight:500;">音乐馆</view>
+		<view class="search" bindtap="gotosearch">
+			<view>
+				<image src="../../images/search.png" style="width:36rpx;height:36rpx;"></image>
+			</view>
+			<view style="margin:0 10rpx;">搜索</view>
+		</view>
+		<view>
+			<image src="../../images/Music.png" style="width:50rpx;height:50rpx;" bindtap="Music"></image>
+		</view>
+	</view>
+	<!-- 轮播图 -->
+	<view style="padding:20rpx;">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#aaaaaa" indicator-active-color="#fff" circular="true" style="overflow:hidden;border-radius:20rpx;">
+			<view wx:for="{{banners}}" wx:key="index">
+				<swiper-item>
+					<image src="{{item.imageUrl}}" style="width:100%;height:100%;"></image>
+				</swiper-item>
+			</view>
+		</swiper>
+	</view>
+	<!-- 首页导航 -->
+	<view style="display:flex;justify-content:space-around;padding:20rpx 0;font-size:30rpx;">
+		<view>
+			<view>每日推荐</view>
+			<view style="text-align:center;">
+				<image src="../../images/recommend.png" style="width:50rpx;height:50rpx;"></image>
+			</view>
+		</view>
+		<view>
+			<view>歌单</view>
+			<view style="text-align:center;">
+				<image src="../../images/songsheet.png" style="width:50rpx;height:50rpx;"></image>
+			</view>
+		</view>
+		<view>
+			<view>排行榜</view>
+			<view style="text-align:center;">
+				<image src="../../images/RankingList.png" style="width:50rpx;height:50rpx;"></image>
+			</view>
+		</view>
+		<view>
+			<view>电台</view>
+			<view style="text-align:center;">
+				<image src="../../images/radiostation.png" style="width:50rpx;height:50rpx;"></image>
+			</view>
+		</view>
+		<view>
+			<view>直播</view>
+			<view style="text-align:center;">
+				<image src="../../images/livebroadcast.png" style="width:50rpx;height:50rpx;"></image>
+			</view>
+		</view>
+	</view>
+	<!-- 推荐歌单 -->
+	<view>
+		<view class="recommend">
+			<view style="font-weight:600;font-size:32rpx;">推荐歌单</view>
+			<view style="padding:5rpx 15rpx;background:#f2f2f2;border-radius:20rpx;font-weight:300;font-size:28rpx;">歌单广场</view>
+		</view>
+		<view class="recommend111">
+			<view wx:for="{{result}}" wx:key="index" style="width:30%;">
+				<view>
+					<image src="{{item.picUrl}}" style="width:100%;height:200rpx;border-radius:10rpx;" bindtap="recommend" data-id="{{item.id}}"></image>
+				</view>
+				<view class="recommend222">{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 推荐新音乐 -->
+	<view>
+		<view class="recommend">
+			<view style="font-weight:600;font-size:32rpx;">新音乐</view>
+			<view style="padding:5rpx 15rpx;background:#f2f2f2;border-radius:20rpx;font-weight:300;font-size:28rpx;">更多新音乐</view>
+		</view>
+		<scroll-view class="recommend666" scroll-x="true">
+			<view wx:for="{{resultmusic}}" wx:key="index" style="width:30%;display:inline-block;margin:0 10rpx;">
+				<view>
+					<image src="{{item.picUrl}}" style="width:100%;height:200rpx;border-radius:10rpx;"></image>
+				</view>
+				<view class="recommend222" style="text-align:center;">{{item.name}}</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 新碟 -->
+	<view>
+		<view class="recommend">
+			<view style="font-weight:600;font-size:32rpx;">新碟</view>
+			<view style="padding:5rpx 15rpx;background:#f2f2f2;border-radius:20rpx;font-weight:300;font-size:28rpx;">更多新碟</view>
+		</view>
+		<scroll-view class="recommend666" scroll-x="true">
+			<view wx:for="{{albums}}" wx:key="index" style="width:30%;display:inline-block;margin:0 10rpx;">
+				<view>
+					<image src="{{item.blurPicUrl}}" style="width:100%;height:200rpx;border-radius:10rpx;"></image>
+				</view>
+				<view class="recommend222">{{item.name}}</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 推荐mv -->
+	<view>
+		<view class="recommend">
+			<view style="font-weight:600;font-size:32rpx;">推荐MV</view>
+			<view style="padding:5rpx 15rpx;background:#f2f2f2;border-radius:20rpx;font-weight:300;font-size:28rpx;">更多MV</view>
+		</view>
+		<view wx:for="{{resultmv}}" wx:key="index" style="display:flex;padding:10rpx 20rpx;align-items:center;" bindtap="gotomv" 
+		data-id="{{item.id}}">
+			<view>
+				<image src="{{item.picUrl}}" style="width:180rpx;height:120rpx;;border-radius:10rpx;"></image>
+			</view>
+			<view style="margin:0 20rpx;font-size:30rpx;width:70%;">
+				<view>{{item.artistName}}</view>
+				<view class="recommend222" style="color:#999999;">{{item.copywriter}}</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,42 @@
+.topindex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20rpx 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border-radius: 30rpx;
+  color: #999999;
+  width: 56%;
+  padding: 10rpx 0;
+}
+
+.recommend {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.recommend111 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.recommend666 {
+  white-space: nowrap;
+}
+
+.recommend222 {
+  overflow: hidden;
+  /*自动隐藏文字*/
+  text-overflow: ellipsis;
+  /*文字隐藏后添加省略号*/
+  white-space: nowrap;
+  /*强制不换行*/
+  font-size: 28rpx;
+  padding:15rpx 0;
+}

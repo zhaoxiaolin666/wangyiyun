@@ -1,0 +1,12 @@
+<!--components/search1/search1.wxml-->
+<view>
+	<view wx:for="{{songs}}" wx:key="index">
+		<view style="display:flex;align-items:center;padding:10rpx;">
+			<view style="padding:15rpx;">{{index+1}}</view>
+			<view>
+				<view>{{item.name}}</view>
+				<view style="color:#cccccc;font-size:30rpx;">{{item.artists[0].name}}-{{item.album.name}}</view>
+			</view>
+		</view>
+	</view>
+</view>

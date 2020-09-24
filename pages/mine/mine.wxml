@@ -1,0 +1,41 @@
+<!--pages/mine/mine.wxml-->
+<view>
+	<view style="display:flex;justify-content:space-around;padding:10rpx 0;font-size:40rpx;">
+		<view bindtap="Mobilelogin" class="{{flag===0 ? 'border' : ''}}">手机登录</view>
+		<view bindtap="Emaillogin" class="{{flag===1 ? 'border' : ''}}">邮箱登录</view>
+	</view>
+	<!-- 手机号 -->
+	<view style="display:flex;margin:30rpx;border:1rpx solid #cccccc;align-item:center;">
+		<view>
+			<text style="color:red;">*</text>
+			<image src="../../images/phone.png" style="width:50rpx;height:50rpx;"></image>
+		</view>
+		<view>
+			<input type="number" placeholder="请输入手机号" class="ipt1" bindblur="value1"/>
+		</view>
+	</view>
+	<!-- 密码 -->
+	<view style="display:flex;margin:30rpx;border:1rpx solid #cccccc;align-item:center;" wx:if="{{flag===0}}">
+		<view>
+			<text style="color:red;">*</text>
+			<image src="../../images/people.png" style="width:50rpx;height:50rpx;"></image>
+		</view>
+		<view>
+			<input type="password" placeholder="请输入密码" class="ipt1" bindblur="value2"/>
+		</view>
+	</view>
+	<!-- 邮箱 -->
+	<view style="display:flex;margin:30rpx;border:1rpx solid #cccccc;align-item:center;" wx:if="{{flag===1}}">
+		<view>
+			<text style="color:red;">*</text>
+			<image src="../../images/Mailbox.png" style="width:50rpx;height:50rpx;"></image>
+		</view>
+		<view>
+			<input type="mail" placeholder="请输入邮箱" class="ipt1" bindblur="value3"/>
+		</view>
+	</view>
+	<view style="display:flex;justify-content:space-around;">
+		<button class="mini-btn" type="primary" bindtap="register">立即注册</button>
+		<button class="mini-btn" type="primary" bindtap="login">立即登录</button>
+	</view>
+</view>
